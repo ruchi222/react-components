@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 // import { URL_API } from './config'
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { FontAwesomeIcon } from "@fontwesome/react-fontawesome";
 
 import Header from './components/header/header-component';
 import Profile from './components/profile/profile-component';
 import Content from './components/main/content/content.component';
 
 import Loading from './components/loader/spinner.component';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
 class App extends Component {
   constructor(props) {
@@ -62,6 +64,9 @@ class App extends Component {
           >
           <Content posts={slicedItems} videos={slicedItems} tags={slicedItems}/>
           </InfiniteScroll>
+        </div>
+        <div className="play-control">
+          <FontAwesomeIcon className="play" icon={faPlay}/>
         </div>
       </div>
     );
